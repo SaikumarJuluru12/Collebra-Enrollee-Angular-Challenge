@@ -1,0 +1,8 @@
+<h1>Welcome to Enrollee Web!</h1>
+<div *ngIf="enrollees && enrollees.length>0">
+  <app-editable-table [columns]="['id','name', 'dateOfBirth', 'active','actions']" [dateColumns]="['dateOfBirth']"
+    [editableColumns]="[ 'name',  'active']" [data]="enrollees" [pageSizeOptions]="[10,20,50,100]" [searchable]="true"
+    (action)="updateEnrollee($event)" [maxChar]="50">
+  </app-editable-table>
+</div>
+<notifier-container></notifier-container>
